@@ -4,10 +4,7 @@ from mavsdk import System
 async def run():
 
     drone = System()
-    # await drone.connect()
-    await drone.connect("serial:///dev/tty.usbmodem01:115200")
-    # await drone.connect("udp://192.168.43.1:14550")
-    # await drone.connect("tcp://0.0.0.0:5760")
+    await drone.connect("serial:///dev/ttymxc2:921600")
 
     print("Waiting for drone to connect...")
     async for state in drone.core.connection_state():
